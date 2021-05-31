@@ -10,6 +10,6 @@ import com.capgemini.AccountModule.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
 
-	@Query("Select u from User u where u.userName = : userName")
+	@Query("Select u from User u where u.userName = :userName")
 	public User getUserByUserName(@Param("userName") String userName);
 }

@@ -32,11 +32,13 @@ public class UserService {
     	userRepository.deleteById(id);
     }
     
-    public User updateCustomer(User customer,Long id) {
+    public User updateCustomer(User user,Long id) {
     	Optional<User> findById = userRepository.findById(id);
-    	findById.get().setUserName(customer.getUserName());
-    	findById.get().setPassword(customer.getPassword());
-    	findById.get().setUserRoles(customer.getUserRoles());
+    	findById.get().setFirstName(user.getFirstName());
+    	findById.get().setLastName(user.getLastName());
+    	findById.get().setUserName(user.getUserName());
+    	findById.get().setPassword(user.getPassword());
+    	findById.get().setUserRoles(user.getUserRoles());
     	return userRepository.save(findById.get());
     			
     }
